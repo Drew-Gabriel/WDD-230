@@ -1,16 +1,25 @@
-/* styles.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
   color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #222;
+  color: #fff;
 }
 
 header {
   background-color: #002e5f;
   color: white;
-  /* padding: 20px; */
+  /* padding: 20px; */ display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 15px; */
 }
 
 .profile-header {
@@ -33,9 +42,15 @@ header {
   text-align: left;
   font-weight: 500;
 }
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
 
 nav {
-  background-color: #ff9500;
+  background-color: #ffd69d;
   padding: 20px 0px;
   margin-top: 10px;
   text-align: center;
@@ -49,18 +64,37 @@ nav {
   gap: 130px;
   
 }
+
+.nav-menu a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+/* Mobile Menu */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+.close-menu {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
 .span1{
   position: absolute;
   left: 0px;
   top: 141px;
   background-color: #333;
-  padding: 33px 50px 41px 200px;
+  padding: 33px 50px 33px 200px;
 }
-.nav-menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
+.span1{
+  color: #f4f4f4;
+
+}
+.spans{
+  color: #2c2c2c;
+
 }
 
 main {
@@ -151,5 +185,40 @@ footer {
 
   .profile-header {
     flex-direction: column; /* Stack the profile image and name vertically on mobile */
+  }
+}
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none;
+      flex-direction: column;
+      background: #ff9500;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+  }
+
+  .nav-menu  a {
+      display: block;
+      padding: 10px;
+  }
+  .nav-menu  .spans .span1 {
+    display: block;
+    padding: 10px;
+}
+  .hamburger {
+      display: block;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      padding: 10px;
+  }
+
+  .nav-open {
+      display: flex !important;
   }
 }

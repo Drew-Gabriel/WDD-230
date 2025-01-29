@@ -13,15 +13,22 @@
       <h1>Taiye G benson
       </h1>
     </div>
-    <nav>
-      <ul class="nav-menu">
-        <li>  <a class="span1" href="#">Home</a></li>
-        <li><a class="spans" href="#">Chamber</a></li>
-        <li><a  class="spans"href="#">Site Plan</a></li>
-        <li><a  class="spans"href="#">Form</a></li>
-      </ul>
-    </nav>
+      <!-- Dark Mode Toggle -->
+      <button id="dark-mode-toggle">🌙</button>
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+   
   </header>
+  <nav id="nav-menu">
+    <ul class="nav-menu">
+      <li>  <a class="span1" href="#">Home</a></li>
+      <li><a class="spans" href="#">Chamber</a></li>
+      <li><a  class="spans"href="#">Site Plan</a></li>
+      <li><a  class="spans"href="#">Form</a></li>
+    </ul>
+    <span class="close-menu" onclick="toggleMenu()">✖</span>
+  </nav>
   <main>
     <h2>WDD 230: Web Frontend Development</h2>
     <div class="content">
