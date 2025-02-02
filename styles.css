@@ -28,7 +28,7 @@ header {
   align-items: center; /* Center align items vertically */
   justify-content: center; /* Center align items horizontally */
   gap: 15px; /* Add spacing between the image and the name */
-  padding: 10px 0px;
+  /* padding: 10px 0px; */
 }
 
 .profile-img {
