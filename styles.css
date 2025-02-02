@@ -16,7 +16,8 @@ body {
 header {
   background-color: #002e5f;
   color: white;
-  /* padding: 20px; */ display: flex;
+  /* padding: 20px; */ 
+  /* display: flex; */
     justify-content: space-between;
     align-items: center;
     /* padding: 15px; */
@@ -27,6 +28,7 @@ header {
   align-items: center; /* Center align items vertically */
   justify-content: center; /* Center align items horizontally */
   gap: 15px; /* Add spacing between the image and the name */
+  padding: 10px 0px;
 }
 
 .profile-img {
@@ -134,6 +136,13 @@ h2 {
   color: #ffcc00;
   text-decoration: none;
 }
+.img1{
+  width: 75%;
+  display: block;  /* Makes margin auto work */
+  margin: auto;    /* Centers horizontally */
+  /* height: 100vh; */
+  padding: 20px 0px;
+}
 
 footer {
   text-align: center;
@@ -189,16 +198,16 @@ footer {
 }
 @media (max-width: 768px) {
   .nav-menu {
-      display: none;
-      flex-direction: column;
-      background: #ff9500;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
-  }
+    /* display: none; */
+    flex-direction: column;
+    /* background: #ff9500; */
+    /* position: absolute; */
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
 
   .nav-menu  a {
       display: block;
