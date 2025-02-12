@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form</title>
+    <link rel="stylesheet" href="form.css">
+    <link href="css/normalize.css" rel="stylesheet">
+<!-- phone-default -->
+<link href="css/small.css" rel="stylesheet">
+<!-- enhance-tablet -->
+<link href="css/medium.css" rel="stylesheet">
+<!-- enhance-desktop -->
+<link href="css/large.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Our Membership Program</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="membership.html">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <section class="membership-form">
+            <h2>Join Our Membership</h2>
+            <form action="thankyou.html" method="GET">
+                
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="title">Your Title/Position:</label>
+                <input type="text" id="title" name="title" pattern="[A-Za-z -]{7,}" title="Must be at least 7 characters, only letters, hyphens, and spaces allowed.">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+                <label for="phone">Mobile Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="business">Business/Organization Name:</label>
+                <input type="text" id="business" name="business" required>
+
+                <label for="membership">Membership Level:</label>
+                <select id="membership" name="membership">
+                    <option value="NP">Non-Profit (Free)</option>
+                    <option value="Bronze">Bronze Membership</option>
+                    <option value="Silver">Silver Membership</option>
+                    <option value="Gold">Gold Membership</option>
+                </select>
+
+                <label for="description">Business/Organization Description:</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <button type="submit">Submit Membership Form</button>
+            </form>
+        </section>
+
+        <!-- <aside class="membership-benefits">
+            <h3>Membership Benefits</h3>
+            <ul>
+                <li><strong>Non-Profit:</strong> No fee, community access.</li>
+                <li><strong>Bronze:</strong> Event discounts, networking.</li>
+                <li><strong>Silver:</strong> Training, advertising benefits.</li>
+                <li><strong>Gold:</strong> Premium exposure, VIP access.</li>
+            </ul>
+        </aside> -->
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Organization. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("timestamp").value = new Date().toISOString();
+    </script>
+
+</body>
+</html>
