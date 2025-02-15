@@ -137,7 +137,7 @@ nav {
   display: none;
 }
 .span1{
-  position: absolute;
+  /* position: absolute; */
   left: 0px;
   top: 141px;
   background-color: #333;
