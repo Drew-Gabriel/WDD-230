@@ -87,3 +87,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   lazyImages.forEach(img => observer.observe(img));
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Handle visit message
+  const visitMessage = document.getElementById("visit-message");
+  const lastVisit = localStorage.getItem("lastVisit");
+  const now = Date.now();
+
+  if (!lastVisit) {
+      visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+  } else {
+      const daysSinceLastVisit = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+      if (daysSinceLastVisit < 1) {
+          visitMessage.textContent = "Back so soon! Awesome!";
+      } else if (daysSinceLastVisit === 1) {
+          visitMessage.textContent = "You last visited 1 day ago.";
+      } else {
+          visitMessage.textContent = `You last visited ${daysSinceLastVisit} days ago.`;
+      }
+  }
+
+  localStorage.setItem("lastVisit", now);
+
+  // Lazy loading images
+  const images = document.querySelectorAll("img[loading='lazy']");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src; // Load the actual image
+              img.removeAttribute("data-src"); // Remove the attribute after loading
+              observer.unobserve(img);
+          }
+      });
+  });
+
+  // images.forEach(img => {
+  //     observer.observe(img);
+  // });
+});
